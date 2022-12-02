@@ -1,0 +1,110 @@
+{
+  "tests": [
+    {
+      "name": "Testing Compile for Homework1",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet build CSharp/homework1/BillCalculator",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Testing BillCalculator for Homework 1 Customer 1 && Customer 2",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet run --project CSharp/homework1/BillCalculator",
+      "inputs": "",
+      "outputs": [
+        {
+          "expected": "13.20",
+          "comparison": "included"
+        },
+        {
+          "expected": "1.06",
+          "comparison": "included"
+        },
+        {
+          "expected": "0.26",
+          "comparison": "included"
+        },
+        {
+          "expected": "14.52",
+          "comparison": "included"
+        },
+        {
+          "expected": "19.20",
+          "comparison": "included"
+        },
+        {
+          "expected": "1.54",
+          "comparison": "included"
+        },
+        {
+          "expected": "0.38",
+          "comparison": "included"
+        },
+        {
+          "expected": "21.12",
+          "comparison": "included"
+        }
+      ],
+      "timeout": 10,
+      "points": 15
+    },
+
+    {
+      "name": "Testing Compile for Homework1 EnhancedBillCalculator",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet build CSharp/homework1/EnhancedBillCalculator",
+      "comparison": "included",
+      "timeout": 3,
+      "points": 5
+    },
+    {
+      "name": "Testing for Customer 1",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet run --project CSharp/homework1/EnhancedBillCalculator",
+      "inputs": [2, 2, 1],
+      "outputs": [
+        {
+          "expected": "13.20",
+          "comparison": "included"
+        },
+        {
+          "expected": "1.06",
+          "comparison": "included"
+        },
+        {
+          "expected": "0.26",
+          "comparison": "included"
+        },
+        {
+          "expected": "14.52",
+          "comparison": "included"
+        }
+      ],
+      "timeout": 10,
+      "points": 7.5
+    },
+    {
+      "name": "Testing for Customer 2",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet run --project CSharp/homework1/EnhancedBillCalculator",
+      "inputs": [3, 2, 3],
+      "outputs": [
+        {
+          "expected": "19.20",
+          "comparison": "included"
+        },
+        {
+          "expected": "1.54",
+          "comparison": "included"
+        },
+        {
+          "expected": "0.38",
+          "comparison": "included"
+        },
+        {
+          "expected": "21.12",
+          "comparison": "included"
+        }
+      ],
+      "timeout": 10,
+      "points": 7.5
+    }
+  ]
+}

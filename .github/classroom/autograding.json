@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "name": "run pytest",
+      "run": "python -m pytest",
+      "points": 10
+    },
+    {
+      "name": "Testing the welcome message",
+      "run": "python task3.py",
+      "timeout": 20,
+      "points": 5,
+      "inputs": ["q"],
+      "outputs":
+      [
+        {
+          "expected": "Welcome to the address book!",
+          "comparison": "included"
+        }
+      ]
+    },
+    {
+      "name": "Testing Add a new contact",
+      "run": "python task3.py",
+      "timeout": 20,
+      "points": 15,
+      "inputs": ["a","Josh","23456789","p","q"],
+      "outputs": [
+        {
+          "expected": "Josh",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
+                {
+          "expected": "23456789",
+          "comparison": "included"
+        }
+      ]
+    }
+  ]
+}

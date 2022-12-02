@@ -1,0 +1,20 @@
+name: Autograde Github Action
+run-name: ${{ github.actor }} is running the autograde scripts
+on: [push]
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the latest version of the repository
+        uses: actions/checkout@v3
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install the npm dependencies
+        working-directory: ./autogradejson
+        run: npm install
+      - name: run the GameSale class and Program.cs tests through the autograding json
+        working-directory: ./autogradejson
+        run: npm start

@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Build Test BillCalculator",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet build BillCalculator",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "Build Test EnhancedBillCalculator",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet build EnhancedBillCalculator",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "BuildTest WindowsOSSales",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet build WindowsOSSales",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "EnhancedBillCalculator Customer 1",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet run --project EnhancedBillCalculator",
+      "input": "2\r\n2\r\n1",
+      "output": "/2\\s*sodas|2\\s*sandwiches|1\\s*(chips)|1\\s*(chip)|subtotal:\\s*\\$13.20|tax:\\s*\\$1.06|tip:\\s*\\$0.26|total:\\s*\\$14.52/gi",
+      "comparison": "regex",
+      "timeout": 2,
+      "points": 10
+    },
+    {
+      "name": "EnhancedBillCalculator Customer 2",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet run --project EnhancedBillCalculator",
+      "input": "3\r\n2\r\n3",
+      "output": "/3\\s*sodas|2\\s*sandwiches|3\\s*(chips)|3\\s*(chip)|subtotal:\\s*\\$19.20|tax:\\s*\\$1.54|tip:\\s*\\$0.38|total:\\s*\\$21.12/gi",
+      "comparison": "regex",
+      "timeout": 2,
+      "points": 10
+    }
+  ]
+}
