@@ -82,11 +82,11 @@
       ]
     },
     {
-      "name": "Testing updating a contact",
+      "name": "Testing editing a contact",
       "run": "python task3.py",
       "timeout": 20,
       "points": 5,
-      "inputs": ["a","Josh","23456789","u","Josh","John","15623423","p","q"],
+      "inputs": ["a","Josh","23456789","e","Josh","1562342","p","q"],
       "outputs": [
         {
           "expected": "contacts: 1",
@@ -94,12 +94,12 @@
           "caseInSensitive": true
         },
         {
-          "expected": "John",
+          "expected": "Josh",
           "comparison": "included",
           "caseInSensitive": true
         },
         {
-          "expected": "15623423",
+          "expected": "1562342",
           "comparison": "included",
           "caseInSensitive": true
         }
