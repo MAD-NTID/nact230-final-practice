@@ -19,3 +19,72 @@ The tasks are:
 3. Test your code by running the file and checking the output
 4. Continue to the next task
 5. After completing all tasks, commit and push your code to your GitHub repository
+
+## Sample Output
+
+### Task 1
+
+```bash
+$ python task1.py
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+2
+3
+5
+7
+```
+
+### Task 2
+
+```bash
+$ python task2.py
+[6, 3, 7, 1, 2]
+[9, 2, 6, 10, 1]
+[1, 2, 6]
+```
+
+### Task 3
+
+```bash
+$ python task3.py
+Welcome to the address book!
+Commands:
+  a: Add a contact
+  e: Edit a contact
+  d: Delete a contact
+  s: Search for a contact
+  p: Print all contacts
+  q: Quit
+Enter a command: a
+Enter a name: Joe
+Enter a phone number: 1234567 
+Contact added!
+Enter a command: p
+Number of contacts: 1
+Joe 1234567
+
+Enter a command: e
+Enter a name: Joe
+Enter a phone number: 2345678 
+Contact updated!
+Enter a command: p
+Number of contacts: 1
+Joe 2345678
+
+Enter a command: s
+Enter a search term: Mary
+Number of matching contacts: 0
+
+Enter a command: s
+Enter a search term: Joe
+Number of matching contacts: 1
+Joe 2345678
+
+Enter a command: d
+Enter a name: Joe
+Contact deleted!
+Enter a command: p
+Number of contacts: 0
+
+Enter a command: q
+Goodbye!
+```
