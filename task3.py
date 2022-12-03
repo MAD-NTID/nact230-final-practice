@@ -27,6 +27,7 @@ You will need to write the following functions:
 
 address_book = {}
 
+
 def add_contact():
     """
     Add a contact to the address book.
@@ -121,7 +122,7 @@ def main():
         pass
         # Ask the user to enter a command
 
-        # If the user enters 'q', quit the program
+        # If the user enters 'q', print "Goodbye!" and quit the program
 
         # If the user enters 'a', call the add_contact function
         
