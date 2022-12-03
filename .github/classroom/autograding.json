@@ -3,7 +3,8 @@
     {
       "name": "run pytest",
       "run": "python -m pytest",
-      "points": 5
+      "timeout": 20,
+      "points": 15
     },
     {
       "name": "Testing the welcome message",
@@ -23,9 +24,14 @@
       "name": "Testing Add a new contact",
       "run": "python task3.py",
       "timeout": 20,
-      "points": 15,
+      "points": 5,
       "inputs": ["a","Josh","23456789","p","q"],
       "outputs": [
+        {
+          "expected": "contacts: 1",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
         {
           "expected": "Josh",
           "comparison": "included",
@@ -38,20 +44,79 @@
       ]
     },
     {
-      "name": "Testing List comprehension",
-      "run": "cat task3.py",
-      "extraCredit": true,
-      "points": 15,
+      "name": "Testing deleting a contact",
+      "run": "python task3.py",
       "timeout": 20,
+      "points": 5,
+      "inputs": ["a","Josh","23456789","d","Josh","p","q"],
+      "outputs": [
+        {
+          "expected": "contacts",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
+        {
+          "expected": "0",
+          "comparison": "included",
+          "caseInSensitive": true
+        }
+      ]
+    },
+    {
+      "name": "Testing searching a contact",
+      "run": "python task3.py",
+      "timeout": 20,
+      "points": 5,
+      "inputs": ["a","Josh","23456789","a","John","15623423","s","John","q"],
+      "outputs": [
+        {
+          "expected": "contacts: 1",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
+        {
+          "expected": "John",
+          "comparison": "included",
+          "caseInSensitive": true
+        }
+      ]
+    },
+    {
+      "name": "Testing updating a contact",
+      "run": "python task3.py",
+      "timeout": 20,
+      "points": 5,
+      "inputs": ["a","Josh","23456789","u","Josh","John","15623423","p","q"],
+      "outputs": [
+        {
+          "expected": "contacts: 1",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
+        {
+          "expected": "John",
+          "comparison": "included",
+          "caseInSensitive": true
+        },
+        {
+          "expected": "15623423",
+          "comparison": "included",
+          "caseInSensitive": true
+        }
+      ]
+    },
+    {
+      "name": "Testing quitting the program",
+      "run": "python task3.py",
+      "timeout": 20,
+      "points": 5,
       "inputs": ["q"],
       "outputs": [
         {
-           "expected":"[a-z]+\\s*=\\s*\\[[a-z]+\\s*for\\s*[a-z]\\s*in\\s*.+\\]",
-          "comparison": "regex",
-          "caseInsensitive": true
-
+          "expected": "Goodbye",
+          "comparison": "included",
+          "caseInSensitive": true
         }
-
       ]
     }
   ]
