@@ -15,6 +15,8 @@ jobs:
       - name: Install the npm dependencies
         working-directory: ./autogradejson
         run: npm install
-      - name: run the GameSale class and Program.cs tests through the autograding json
+      - name: Install pytest dependency
+        run: pip install pytest
+      - name: evaluate exam tasks through the autograding json
         working-directory: ./autogradejson
         run: npm start
